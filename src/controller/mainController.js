@@ -5,7 +5,7 @@ const cardCollection = require('../services/connectDb')
 controller.getInfo = (req, res) => {
     res.writeHead(200, {
         'Content-Type': 'text/event-stream',
-        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Origin': 'https://ipsum-alpha.vercel.app',
         'Cache-Control': 'no-cache',
     })
 

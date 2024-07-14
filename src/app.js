@@ -1,13 +1,7 @@
 const express = require('express')
 const dotenv = require('dotenv')
-const services = require('./services/connectDb')
-const cors  = require('cors')
 
 const app = express()
-
-app.use(cors())
-app.options('*', cors());
-
 app.use(express.json())
 
 
@@ -41,6 +35,6 @@ app.disable('x-powered-by')
 
 function startServer() {
     app.listen(app.get('port'), () => {
-        console.log("Running on port 4000. Please open in following link http://localhost:4000")
+        console.log("Running on port 4000.")
     })
 }
