@@ -21,6 +21,8 @@ controller.getInfo = (req, res) => {
         clearInterval(pollingFetch)
         res.end()
     })
+
+    res.write("Hello From the backend :)\n\n")
 }
 
 controller.saveInfo = (req, res) => {
