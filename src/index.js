@@ -19,18 +19,19 @@ const MONGO_PASSWORD = process.env.MONGO_PASSWORD
 
 const MONGOOSE_URI = `mongodb+srv://${MONGOOSE_USERNAME}:${MONGO_PASSWORD}@cluster0.ppfuij5.mongodb.net/infoCollection?retryWrites=true&w=majority&appName=Cluster0`
 
-mongoose.connect(MONGOOSE_URI)
-    .catch((err) => console.log(err))
-
-
 app.set('port', process.env.PORT || 4000);
-
 app.use('/', mainRoute)
 app.use(express.urlencoded({extended: false}))
 app.disable('x-powered-by')
 
 
-app.listen(app.get('port'), () => {
-    console.log("Running on port 4000.")
-})
+mongoose.connect(MONGOOSE_URI)
+    .then(() => app.listen(app.get('port'), () => {console.log("Running on port 4000.")}))
+    .catch((err) => console.log(err))
+
+
+
+
+
+
 
