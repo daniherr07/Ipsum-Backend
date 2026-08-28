@@ -29,6 +29,7 @@ const ALL_PROJECTS_QUERY = `
     l.google_url as google_url,
     en.nombre as entidad,
     cn.nombre as centro_negocio,
+    ad.presupuesto as presupuesto,
     CONCAT(con.nombre, ' ', con.apellido1) as p_constructor,
     CONCAT(arq.nombre, ' ', arq.apellido1) as arquitecto,
     CONCAT(prom.nombre, ' ', prom.apellido1) as promotor,
